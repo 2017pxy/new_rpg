@@ -15,8 +15,8 @@ public:
 private:
     static QImage _res;
     static int mode;
-    icon player_icon;
-    //vector<icon> player_icon;
+    //icon player_icon;
+    vector<icon> player_icon;
 };
 
 #endif // PLAYER_H

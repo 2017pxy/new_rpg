@@ -1,13 +1,13 @@
-#ifndef TREE_H
-#define TREE_H
+#ifndef HOUSE1_H
+#define HOUSE1_H
 #include<QPainter>
 #include"base.h"
 
-class tree_pic:public base
+class house1:public base
 {
 public:
     void show(QPainter *painter);
 private:
     static QImage _res;
 };
-#endif // TREE_H
+#endif // HOUSE1_H

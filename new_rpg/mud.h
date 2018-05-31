@@ -1,13 +1,14 @@
-#ifndef TREE_H
-#define TREE_H
+#ifndef MUD_H
+#define MUD_H
 #include<QPainter>
 #include"base.h"
 
-class tree_pic:public base
+class mud:public base
 {
 public:
     void show(QPainter *painter);
 private:
     static QImage _res;
 };
-#endif // TREE_H
+
+#endif // MUD_H

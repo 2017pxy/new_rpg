@@ -28,7 +28,7 @@ bool base::if_cover(base r)
     rightX=(r.getX()+r.getW())<(_pos_X+_width) ? (r.getX()+r.getW()):(_pos_X+_width);
     topY=r.getY()>_pos_Y ? r.getY() : _pos_Y;
     botY=(r.getY()+r.getH())<(_pos_Y+_height) ? (r.getY()+r.getH()) :(_pos_Y+_height);
-    if(leftX-rightX>=0&&topY-botY>=0)
+    if(leftX-rightX<0&&topY-botY<0)
         return true;
     else
         return false;

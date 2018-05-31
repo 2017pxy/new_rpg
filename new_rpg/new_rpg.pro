@@ -31,7 +31,11 @@ SOURCES += \
     icon.cpp \
     tree_pic.cpp \
     player.cpp \
-    world.cpp
+    world.cpp \
+    npc_1_1.cpp \
+    house1.cpp \
+    npc.cpp \
+    mud.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -40,7 +44,11 @@ HEADERS += \
     icon.h \
     tree_pic.h \
     player.h \
-    world.h
+    world.h \
+    npc_1_1.h \
+    house1.h \
+    npc.h \
+    mud.h
 
 FORMS += \
         mainwindow.ui
