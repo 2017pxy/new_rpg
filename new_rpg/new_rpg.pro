@@ -35,7 +35,17 @@ SOURCES += \
     npc_1_1.cpp \
     house1.cpp \
     npc.cpp \
-    mud.cpp
+    mud.cpp \
+    front_hill.cpp \
+    npc_3_1.cpp \
+    npc_3_2.cpp \
+    npc_3_3.cpp \
+    npc_3_4.cpp \
+    npc_3_5.cpp \
+    chest.cpp \
+    portal.cpp \
+    world_back.cpp \
+    npc_2.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -48,7 +58,17 @@ HEADERS += \
     npc_1_1.h \
     house1.h \
     npc.h \
-    mud.h
+    mud.h \
+    front_hill.h \
+    npc_3_1.h \
+    npc_3_2.h \
+    npc_3_3.h \
+    npc_3_4.h \
+    npc_3_5.h \
+    chest.h \
+    portal.h \
+    world_back.h \
+    npc_2.h
 
 FORMS += \
         mainwindow.ui

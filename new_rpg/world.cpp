@@ -11,6 +11,7 @@
 #include"house1.h"
 #include"npc.h"
 #include"mud.h"
+#include<iostream>
 using namespace std;
 
 int world::npc_life[100]={0};
@@ -70,7 +71,7 @@ void world::init_world()
     npc* p1=new npc_1_1(7,7,1,1.5);
     _npc.push_back(p1);
     npc_life[0]=1;
-
+    //房子初始化
     house1 temp1;
     temp1.init_(0,2,7,4.8,"house1_1");
     house1 temp2;
@@ -89,15 +90,50 @@ void world::init_world()
     house_1.push_back(temp4);
     house_1.push_back(temp5);
     house_1.push_back(temp6);
+    //路面初始化
+    mud temp7;
+    temp7.init_(4,7,0.95,1,"mud_road");
+    mud_road.push_back(temp7);
+    mud temp8;
+    temp8.init_(13,7,0.95,1,"mud_road");
+    mud_road.push_back(temp8);
+    mud temp9;
+    temp9.init_(26,7,0.95,1,"mud_road");
+    mud_road.push_back(temp9);
+    mud temp10;
+    temp10.init_(2,14,0.95,1,"mud_road");
+    mud_road.push_back(temp10);
+    mud temp11;
+    temp11.init_(13,14,0.95,1,"mud_road");
+    mud_road.push_back(temp11);
+    mud temp12;
+    temp12.init_(24,14,0.95,1,"mud_road");
+    mud_road.push_back(temp12);
 
     for(i=0;i<32;i++)
     {
         mud temp;
         string a="mud_road";
-        temp.init_(i,8,1,1,a);
+        temp.init_(i,8,0.95,1,a);
         this->mud_road.push_back(temp);
     }
-
+    for(i=0;i<32;i++)
+    {
+        mud temp;
+        string a="mud_road";
+        temp.init_(i,15,0.95,1,a);
+        this->mud_road.push_back(temp);
+    }
+    //路标初始化
+    /*tree_pic temp13;
+    temp13.init_(0,7,1,1,"guidepost");
+    _trees.push_back(temp13);
+    tree_pic temp14;
+    temp14.init_(31,14,1,1,"guidepost");
+    _trees.push_back(temp14);*/
+    //传送门初始化
+    _por1._init(0,7);
+    _por2._init(30,14);
 }
 
 void world::show(QPainter *painter)
@@ -129,7 +165,8 @@ void world::show(QPainter *painter)
     {
         (*dd)->show(painter);
     }
-
+   _por1.show(painter);
+    _por2.show(painter);
 }
 void world::player_move(int direction)
 {
@@ -173,5 +210,26 @@ void world::kill_npc(int x)
     npc_life[x-1]=0;
     delete _npc[x-1];
     _npc.erase(_npc.begin()+x-1);
+}
+int world::tp()
+{
+    if(_myplayer.getX()==1&&_myplayer.getY()==7)
+    {
 
+        //_myplayer.reset_pos(2,7);
+        //cout<<"world::tp is calling, -2 is returned"<<endl;
+        return -2;
+    }
+    else if(_myplayer.getX()==30&&_myplayer.getY()==14)
+    {
+        //_myplayer.reset_pos(30,14);
+        return 3;
+    }
+    else
+        return 0;
+}
+void world::portal_show(QPainter *painter)
+{
+    _por1.show(painter);
+    _por2.show(painter);
 }
